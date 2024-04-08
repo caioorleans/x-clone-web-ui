@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      'chirp':['chirp']
+    },
   },
   plugins: [],
 }
