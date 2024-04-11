@@ -11,7 +11,7 @@ import { RouterOutlet } from '@angular/router';
     ButtonsModule,
     RouterOutlet
   ],
-  templateUrl: './authentication.component.html',
+  templateUrl: './authentication-page.component.html',
 })
 export class AuthenticationComponent {
 
