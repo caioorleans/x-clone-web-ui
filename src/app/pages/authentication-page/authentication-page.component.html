@@ -17,7 +17,11 @@
                 <div class="h-px bg-xlight-gray-font dark:bg-xdark-gray-font w-full"></div>
             </div>
             <div class="mb-2">
-                <app-blue-button [text]="'Criar conta'"/>
+                <app-blue-button
+                data-modal-target="default-modal" 
+                data-modal-toggle="default-modal"
+                (click)="goToCreateAccount()"
+                [text]="'Criar conta'"/>
             </div>
             <p class="text-dark-gray-font dark:text-light-gray-font mb-10 text-xs">
                 Ao se inscrever, você concorda com os <a class="text-xblue cursor-pointer hover:underline">Termos de Serviço</a>
@@ -50,7 +54,7 @@
                 <div class="mr-4 w-10">
                 </div>
             </div>
-            <div class="relative pl-6 pr-6 w-full h-full overflow-y-auto flex flex-col md:flex-row justify-center">
+            <div class="relative w-full h-full overflow-y-auto flex flex-col md:flex-row justify-center">
                 <router-outlet></router-outlet>
             </div>
         </div>
