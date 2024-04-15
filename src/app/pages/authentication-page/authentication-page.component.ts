@@ -5,12 +5,7 @@ import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-authentication',
-  standalone: true,
-  imports: [
-    LogoComponent,
-    ButtonsModule,
-    RouterOutlet
-  ],
+  standalone: false,
   templateUrl: './authentication-page.component.html',
 })
 export class AuthenticationComponent {

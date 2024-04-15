@@ -5,20 +5,26 @@ import { ButtonsModule } from '../../components/buttons/buttons.module';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { AuthenticationComponent } from './authentication-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { ForgotPasswordPageComponent } from './forgot-password-page/forgot-password-page.component';
 
 
 
 @NgModule({
   declarations: [
-    //AuthenticationComponent,
-    //LoginPageComponent,
+    AuthenticationComponent,
+    LoginPageComponent,
+    ForgotPasswordPageComponent
   ],
   imports: [
-    CommonModule,
     LogoComponent,
     ButtonsModule,
     RouterModule,
     RouterOutlet
+  ],
+  exports: [
+    AuthenticationComponent,
+    LoginPageComponent,
+    ForgotPasswordPageComponent
   ]
 })
 export class AuthenticationModule { }
