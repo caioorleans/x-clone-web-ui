@@ -7,20 +7,28 @@
             Acontecendo agora
         </span>
         <div class="w-full sm:w-80 pt-8 sm:pt-16">
-            <h1 class="text-black-font dark:text-white-font font-chirp text-2xl sm:text-3xl sm:mb-6">Inscreva-se hoje</h1>
-            <app-white-button [text]="'Entrar com Google'"/>
+            <h1 class="text-black-font dark:text-white-font font-chirp text-2xl mb-4 sm:text-3xl sm:mb-6">Inscreva-se hoje</h1>
+            <div class="mb-2">
+                <app-white-button class="mb-2" [text]="'Entrar com Google'"/>
+            </div>
             <div class="mb-2 flex justify-center items-center">
                 <div class="h-px bg-xlight-gray-font dark:bg-xdark-gray-font w-full"></div>
                 <p class="text-black-font dark:text-white-font ml-2 mr-2">ou</p>
                 <div class="h-px bg-xlight-gray-font dark:bg-xdark-gray-font w-full"></div>
             </div>
-            <app-blue-button [text]="'Criar conta'"/>
+            <div class="mb-2">
+                <app-blue-button
+                data-modal-target="default-modal" 
+                data-modal-toggle="default-modal"
+                (click)="goToCreateAccount()"
+                [text]="'Criar conta'"/>
+            </div>
             <p class="text-dark-gray-font dark:text-light-gray-font mb-10 text-xs">
                 Ao se inscrever, você concorda com os <a class="text-xblue cursor-pointer hover:underline">Termos de Serviço</a>
                  e a <a class="text-xblue cursor-pointer hover:underline">Política de Privacidade</a>,
                   incluindo o <a class="text-xblue cursor-pointer hover:underline">Uso de Cookies</a>.
             </p>
-            <p class="text-black-font dark:text-white-font font-chirp font-bold text-lg mb-0">Já tem uma conta?</p>
+            <p class="text-black-font dark:text-white-font font-chirp font-bold text-lg mb-4">Já tem uma conta?</p>
             <app-transparent-button 
                 data-modal-target="default-modal" 
                 data-modal-toggle="default-modal"
@@ -32,8 +40,8 @@
 <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] h-full">
     <div class="relative md:p-8 w-full h-full md:max-w-2xl">
         <!-- Modal content -->
-        <div class="p-4 pt-10 relative w-full h-full bg-white md:rounded-2xl md:shadow dark:bg-black">
-            <div class="absolute top-0 left-0 w-full h-10 mb-10 flex items-center justify-between">
+        <div class="pt-16 relative w-full h-full bg-white md:rounded-2xl md:shadow dark:bg-black">
+            <div class="absolute top-0 left-0 w-full h-16 mb-10 flex items-center justify-between">
                 <button type="button" class="ml-4 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8  inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
@@ -46,7 +54,7 @@
                 <div class="mr-4 w-10">
                 </div>
             </div>
-            <div class="relative pl-6 pr-6 w-full h-full overflow-y-auto md:flex md:justify-center">
+            <div class="relative w-full h-full overflow-y-auto flex flex-col md:flex-row justify-center">
                 <router-outlet></router-outlet>
             </div>
         </div>
