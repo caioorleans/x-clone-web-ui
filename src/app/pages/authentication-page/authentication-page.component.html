@@ -7,20 +7,24 @@
             Acontecendo agora
         </span>
         <div class="w-full sm:w-80 pt-8 sm:pt-16">
-            <h1 class="text-black-font dark:text-white-font font-chirp text-2xl sm:text-3xl sm:mb-6">Inscreva-se hoje</h1>
-            <app-white-button [text]="'Entrar com Google'"/>
+            <h1 class="text-black-font dark:text-white-font font-chirp text-2xl mb-4 sm:text-3xl sm:mb-6">Inscreva-se hoje</h1>
+            <div class="mb-2">
+                <app-white-button class="mb-2" [text]="'Entrar com Google'"/>
+            </div>
             <div class="mb-2 flex justify-center items-center">
                 <div class="h-px bg-xlight-gray-font dark:bg-xdark-gray-font w-full"></div>
                 <p class="text-black-font dark:text-white-font ml-2 mr-2">ou</p>
                 <div class="h-px bg-xlight-gray-font dark:bg-xdark-gray-font w-full"></div>
             </div>
-            <app-blue-button [text]="'Criar conta'"/>
+            <div class="mb-2">
+                <app-blue-button [text]="'Criar conta'"/>
+            </div>
             <p class="text-dark-gray-font dark:text-light-gray-font mb-10 text-xs">
                 Ao se inscrever, você concorda com os <a class="text-xblue cursor-pointer hover:underline">Termos de Serviço</a>
                  e a <a class="text-xblue cursor-pointer hover:underline">Política de Privacidade</a>,
                   incluindo o <a class="text-xblue cursor-pointer hover:underline">Uso de Cookies</a>.
             </p>
-            <p class="text-black-font dark:text-white-font font-chirp font-bold text-lg mb-0">Já tem uma conta?</p>
+            <p class="text-black-font dark:text-white-font font-chirp font-bold text-lg mb-4">Já tem uma conta?</p>
             <app-transparent-button 
                 data-modal-target="default-modal" 
                 data-modal-toggle="default-modal"
@@ -46,7 +50,7 @@
                 <div class="mr-4 w-10">
                 </div>
             </div>
-            <div class="relative pl-6 pr-6 w-full h-full overflow-y-auto md:flex md:justify-center">
+            <div class="relative pl-6 pr-6 w-full h-full overflow-y-auto flex flex-col md:flex-row justify-center">
                 <router-outlet></router-outlet>
             </div>
         </div>
