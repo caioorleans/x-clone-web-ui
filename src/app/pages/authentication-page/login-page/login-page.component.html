@@ -26,7 +26,7 @@
         </div>
     </form>
     <div class="mb-4">
-        <app-transparent-button class="mb-14" [text]="'Esqueceu a senha?'" />
+        <app-transparent-button class="mb-14" (click)="goToForgotPassword()" [text]="'Esqueceu a senha?'" />
     </div>
     <p class="text-dark-gray-font dark:text-light-gray-font mb-10 text-md">
         Não tem conta? <a class="text-xblue cursor-pointer hover:underline">Inscreva-se</a>
