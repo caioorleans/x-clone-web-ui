@@ -4,8 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-create-account-page',
   standalone: true,
   imports: [],
-  templateUrl: './create-account-page.component.html',
-  styleUrl: './create-account-page.component.css'
+  templateUrl: './create-account-page.component.html'
 })
 export class CreateAccountPageComponent {
 
