@@ -4,9 +4,11 @@ import { BlueButtonComponent } from './blue-button/blue-button.component';
 import { TransparentButtonComponent } from './transparent-button/transparent-button.component';
 import { WhiteButtonComponent } from './white-button/white-button.component';
 import { BwButtonComponent } from './bw-button/bw-button.component';
+import { BasicButtonComponent } from './basic-button/basic-button.component';
 
 @NgModule({
   declarations: [
+    BasicButtonComponent,
     BlueButtonComponent,
     TransparentButtonComponent,
     WhiteButtonComponent,
@@ -16,6 +18,7 @@ import { BwButtonComponent } from './bw-button/bw-button.component';
     CommonModule,
   ],
   exports:[
+    BasicButtonComponent,
     BlueButtonComponent,
     TransparentButtonComponent,
     WhiteButtonComponent,
