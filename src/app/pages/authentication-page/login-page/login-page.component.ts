@@ -16,6 +16,7 @@ export class LoginPageComponent {
 
   loginForm:FormGroup;
   isLoading:boolean = false;
+  errorMessage:string = ""
 
   constructor(
     private router:Router,
@@ -40,7 +41,7 @@ export class LoginPageComponent {
         this.router.navigate(['feed']);
       },
       error: (err:any) => {
-        console.log(err);
+        this.errorMessage = err.error.message;
         this.isLoading = false;
       }
     })
