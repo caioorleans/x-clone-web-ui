@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginRequest } from '../../dto/requests/LoginRequest.dto';
+import { LoginRequest } from '../../dto/requests/loginRequest.dto';
 import { environment } from '../../../environment/environment';
 
 @Injectable({

@@ -4,6 +4,7 @@ import { LoginPageComponent } from './pages/authentication-page/login-page/login
 import { NgModule } from '@angular/core';
 import { ForgotPasswordPageComponent } from './pages/authentication-page/forgot-password-page/forgot-password-page.component';
 import { CreateAccountPageComponent } from './pages/authentication-page/create-account-page/create-account-page.component';
+import { FeedComponent } from './pages/main/feed/feed.component';
 
 export const routes: Routes = [
     {path:"", redirectTo:"auth", pathMatch: "full"},
@@ -12,6 +13,7 @@ export const routes: Routes = [
         {path:"forgot-password", component:ForgotPasswordPageComponent},
         {path:"create-account", component:CreateAccountPageComponent}
     ]},
+    {path:"feed", component: FeedComponent},
     {path:"**", component:AuthenticationComponent}
 ];
 @NgModule({
