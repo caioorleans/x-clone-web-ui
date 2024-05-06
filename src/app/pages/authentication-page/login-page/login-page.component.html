@@ -8,21 +8,25 @@
         <p class="text-black-font dark:text-white-font ml-2 mr-2">ou</p>
         <div class="h-px bg-xlight-gray-font dark:bg-xdark-gray-font w-full"></div>
     </div>
-    <form>
+    <form [formGroup]="loginForm">
         <div class="relative mb-5">
-            <input type="text" id="login" class="block px-2.5 pt-5 pb-5 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+            <input type="text" id="login" formControlName="email" class="block px-2.5 pt-5 pb-5 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
             <label for="login" class="absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-3 scale-75 top-1 z-10 origin-[0] bg-white dark:bg-black px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">
                 E-mail ou nome de usuário
             </label>
         </div>
         <div class="relative mb-5">
-            <input type="password" id="password" class="block px-2.5 pt-5 pb-5 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+            <input type="password" id="password" formControlName="password" class="block px-2.5 pt-5 pb-5 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
             <label for="password" class="absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-3 scale-75 top-1 z-10 origin-[0] bg-white dark:bg-black px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">
                 Senha
             </label>
         </div>
         <div class="mb-4">
-            <app-bw-button type="submit" [text]="'Entrar'" />
+            <app-bw-button (click)="login()" 
+                [text]="'Entrar'" 
+                [isLoading]="isLoading" 
+                [isActive]="!loginForm.invalid"
+            />
         </div>
     </form>
     <div class="mb-4">

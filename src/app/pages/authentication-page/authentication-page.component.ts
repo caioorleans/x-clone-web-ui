@@ -14,4 +14,5 @@ export class AuthenticationComponent {
 
   goToLogin = () => this.router.navigate(['auth/login'])
   goToCreateAccount = () => this.router.navigate(['auth/create-account'])
+  goToInitialPage = () => this.router.navigate(['auth'])
 }

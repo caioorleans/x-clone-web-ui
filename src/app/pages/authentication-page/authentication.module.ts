@@ -6,6 +6,8 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { AuthenticationComponent } from './authentication-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ForgotPasswordPageComponent } from './forgot-password-page/forgot-password-page.component';
+import { CreateAccountPageComponent } from './create-account-page/create-account-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,18 +15,21 @@ import { ForgotPasswordPageComponent } from './forgot-password-page/forgot-passw
   declarations: [
     AuthenticationComponent,
     LoginPageComponent,
-    ForgotPasswordPageComponent
+    ForgotPasswordPageComponent,
+    CreateAccountPageComponent
   ],
   imports: [
     LogoComponent,
     ButtonsModule,
     RouterModule,
-    RouterOutlet
+    RouterOutlet,
+    ReactiveFormsModule
   ],
   exports: [
     AuthenticationComponent,
     LoginPageComponent,
-    ForgotPasswordPageComponent
+    ForgotPasswordPageComponent,
+    CreateAccountPageComponent
   ]
 })
 export class AuthenticationModule { }
