@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ButtonsModule } from '../../../components/buttons/buttons.module';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../../service/auth.service';
+import { AuthService } from '../../../service/auth/auth.service';
 import { LoginRequest } from '../../../dto/requests/LoginRequest.dto';
 
 @Component({

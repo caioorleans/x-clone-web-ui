@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginRequest } from '../dto/requests/LoginRequest.dto';
-import { environment } from '../../environment/environment';
+import { LoginRequest } from '../../dto/requests/LoginRequest.dto';
+import { environment } from '../../../environment/environment';
 
 @Injectable({
   providedIn: 'root'
