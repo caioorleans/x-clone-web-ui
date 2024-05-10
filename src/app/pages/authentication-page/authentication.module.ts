@@ -19,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CreateAccountPageComponent
   ],
   imports: [
+    CommonModule,
     LogoComponent,
     ButtonsModule,
     RouterModule,

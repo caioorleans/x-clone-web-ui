@@ -12,5 +12,6 @@ export class AuthService {
 
   constructor(private http:HttpClient) { }
 
-  login = (loginRequest: LoginRequest) => this.http.post(`${this.url}login`, loginRequest)
+  login = (loginRequest: LoginRequest) => this.http.post(`${this.url}login`, loginRequest);
+
 }
