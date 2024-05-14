@@ -6,6 +6,8 @@ import { dateValidator } from '../../../validators/date-validator';
 import { nameValidator } from '../../../validators/name-validator';
 import { UsernameValidator } from '../../../validators/username-validator';
 import { PasswordValidator } from '../../../validators/password-validator';
+import { Router } from '@angular/router';
+import { SessionService } from '../../../service/session/session.service';
 
 @Component({
   selector: 'app-create-account-page',
@@ -24,7 +26,9 @@ export class CreateAccountPageComponent {
   constructor(
     private formBuilder:FormBuilder,
     private authService:AuthService,
-    private userService:UserService
+    private userService:UserService,
+    private sessionService:SessionService,
+    private router:Router
   ){
     this.form1 = this.formBuilder.group({
       nome: ['', [Validators.required, nameValidator(4, 50)]],
@@ -82,7 +86,8 @@ export class CreateAccountPageComponent {
             passwordConfirmation:this.form2.get('passwordConfirmation')?.value.trim()
           }).subscribe({
             next: (r:any) => {
-              console.log(r)
+              this.sessionService.saveUserSession(r);
+              this.router.navigate(['feed']);
             },
             error: (err:any) => {
               console.log(err)
