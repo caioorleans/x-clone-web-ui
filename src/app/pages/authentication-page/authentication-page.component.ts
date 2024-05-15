@@ -10,7 +10,7 @@ import { Router, RouterOutlet } from '@angular/router';
 })
 export class AuthenticationComponent {
 
-  constructor(private router:Router){}
+  constructor(public router:Router){}
 
   goToLogin = () => this.router.navigate(['auth/login'])
   goToCreateAccount = () => this.router.navigate(['auth/create-account'])
