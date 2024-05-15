@@ -8,6 +8,7 @@ import { UsernameValidator } from '../../../validators/username-validator';
 import { PasswordValidator } from '../../../validators/password-validator';
 import { Router } from '@angular/router';
 import { SessionService } from '../../../service/session/session.service';
+import { ModalService } from '../../../service/modal/modal.service';
 
 @Component({
   selector: 'app-create-account-page',
@@ -28,6 +29,7 @@ export class CreateAccountPageComponent {
     private authService:AuthService,
     private userService:UserService,
     private sessionService:SessionService,
+    private modalService:ModalService,
     private router:Router
   ){
     this.form1 = this.formBuilder.group({
@@ -86,6 +88,7 @@ export class CreateAccountPageComponent {
             passwordConfirmation:this.form2.get('passwordConfirmation')?.value.trim()
           }).subscribe({
             next: (r:any) => {
+              this.modalService.hideModal();
               this.sessionService.saveUserSession(r);
               this.router.navigate(['feed']);
             },

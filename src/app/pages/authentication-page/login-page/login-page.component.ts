@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { ButtonsModule } from '../../../components/buttons/buttons.module';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../service/auth/auth.service';
-import { LoginRequest } from '../../../dto/requests/loginRequest.dto';
 import { SessionService } from '../../../service/session/session.service';
-import { Modal } from 'flowbite';
+import { ModalService } from '../../../service/modal/modal.service';
 
 @Component({
   selector: 'app-login-page',
@@ -22,7 +20,8 @@ export class LoginPageComponent {
     private router:Router,
     private formBuilder:FormBuilder,
     private authService:AuthService,
-    private sessionService:SessionService){
+    private sessionService:SessionService,
+    private modalService:ModalService){
       this.loginForm = formBuilder.group({
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(4)]]
@@ -38,6 +37,7 @@ export class LoginPageComponent {
       next: (r:any) => {
         this.isLoading = false;
         this.sessionService.saveUserSession(r);
+        this.modalService.hideModal();
         this.router.navigate(['feed']);
       },
       error: (err:any) => {
